@@ -1,5 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 from .soup import Soup
 import requests
 import datetime
@@ -7,21 +5,10 @@ import pandas
 import re
 from plyer import notification
 
-driver = webdriver.Chrome()
-
 
 def get_html(url):
     r = requests.get(url)
     return Soup(r.text)
-
-
-def click_button(url, class_name):
-    driver.get(url)
-    driver.find_element(By.XPATH, class_name).click()
-
-
-def get_current_page_source():
-    return driver.page_source
 
 
 def save_to_file(product, filename):
