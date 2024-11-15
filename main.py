@@ -1,4 +1,4 @@
-from source_code.util import get_html, click_button, get_current_page_source, save_to_file, show_info
+from source_code.util import get_html, save_to_file, show_info
 from source_code.soup import Soup
 from source_code.__init__ import URL
 import time
@@ -25,7 +25,7 @@ def get_product_url():
 def get_category_url():
     url = URL
     soup = get_html(url)
-    soup.scrape_category_url()
+    print(soup.scrape_category_url())
 
 
 def get_final_page():
@@ -90,4 +90,4 @@ def main():
 
 
 if __name__ == "__main__":
-    get_product_info()
+    get_category_url()
