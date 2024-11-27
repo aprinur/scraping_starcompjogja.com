@@ -33,8 +33,7 @@ class Soup(BeautifulSoup):
             Tokopedia_link=link_tokopedia,
             Bukalapak_link=link_bukalapak,
             Whatsapp=whatsapp,
-            Description=spec
-        )
+            Description=spec)
 
     def scrape_product_url(self):
         """ Method to scrape product url after choose category """
