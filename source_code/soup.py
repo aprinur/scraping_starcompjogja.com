@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+
 from .data_req import Product_spec
 
 

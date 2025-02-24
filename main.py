@@ -1,44 +1,7 @@
-from source_code.util import get_html, save_to_file, show_info, user_input
-from source_code.soup import Soup
-from source_code.__init__ import URL
 import time
 
-
-def get_product_info():
-    url = 'https://starcompjogja.com/product/gigabyte-vga-geforce-gtx-1050-ti-oc-4g'
-    soup = get_html(url)
-    product = [soup.scrape_product_info()]
-    save_result = save_to_file(product, 'Single product', 'Product from starcompjogja.com', "This is a sample file, if you're interested with the whole file, hire me on upwork https://www.upwork.com/freelancers/~01b277338ca2623008?mp_source=share")
-    if save_result:
-        show_info('Success')
-    else:
-        show_info('Failed')
-    # print(product)
-
-
-def get_product_url():
-    url = 'https://starcompjogja.com/category/processor'
-    soup = get_html(url)
-    soup.scrape_product_url()
-
-
-def get_category_url():
-    url = URL
-    soup = get_html(url)
-    print(soup.scrape_category_url())
-
-
-def get_final_page():
-    url = 'https://starcompjogja.com/category/memory?page=8'
-    soup = get_html(url)
-    print(soup.check_final_page())
-
-
-def get_page_url():
-    url = 'https://starcompjogja.com/category/processor'
-    soup = get_html(url)
-    url = soup.scrape_page_url()
-    print(url[:-1]) if url is not None else print('Category has only 1 page')
+from source_code import URL
+from source_code.util import get_html, save_to_file, show_info, user_input
 
 
 def all_in_one(product_count: int = None, sub_category_count: int = None, page: int = None, filename: str = 'Scraping result', page_title: str = 'Scraping result', description: str = None):
